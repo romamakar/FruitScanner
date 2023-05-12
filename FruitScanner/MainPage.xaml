@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="FruitScanner.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+           >
+            <cv:CameraView x:Name="camera" CamerasLoaded="camera_CamerasLoaded"/>
+            <Label x:Name="loadingLabel" IsVisible="false" HorizontalTextAlignment="Center" Padding="0,40">Аналіз зображення</Label>
+            <Image x:Name="myImage"></Image>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button x:Name="scanBtn" Clicked="scanBtn_Clicked" Text="Сканувати"></Button>
+                <Button x:Name="backBtn" Clicked="backBtn_Clicked" Text="Назад" IsVisible="false"></Button>
+                <Button x:Name="listBtn" Clicked="listBtn_Clicked" Text="Список знайдених продуктів" IsVisible="false"></Button>
+            </HorizontalStackLayout>
+            <Label x:Name="listLabel" IsVisible="false" HorizontalTextAlignment="Center" Padding="0,10"></Label>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

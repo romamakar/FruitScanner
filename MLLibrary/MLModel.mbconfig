@@ -1,0 +1,63 @@
+﻿{
+  "TrainingTime": 2147482,
+  "Scenario": "ObjectDetection",
+  "DataSource": {
+    "Type": "Vott",
+    "Version": 1,
+    "FilePath": "C:\\assets\\vott-json-export\\assets-export.json"
+  },
+  "Environment": {
+    "Type": "Azure",
+    "Version": 1,
+    "SubscriptionID": "15854ea2-0fd8-40a8-87e3-1ee0478491e1",
+    "ResourceGroupName": "Group",
+    "WorkspaceName": "MLW",
+    "ComputeName": "tsiol",
+    "Location": "westeurope",
+    "ExperimentName": "Objectdetection"
+  },
+  "RunHistory": {
+    "Version": 1,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "fasterrcnn-resnet50-fpn",
+        "Score": 0.92,
+        "RuntimeInSeconds": 1085.8384686
+      }
+    ],
+    "Pipeline": {
+      "parameter": {
+        "0": {
+          "OutputColumnName": "input1",
+          "InputColumnName": "input1",
+          "ImageHeight": 600,
+          "ImageWidth": 800,
+          "CropAnchor": "Center",
+          "Resizing": "Fill"
+        },
+        "1": {
+          "OutputColumnName": "input1",
+          "InputColumnName": "input1",
+          "ColorsToExtract": "Rgb",
+          "OrderOfExtraction": "ARGB",
+          "OutputAsFloatArray": true
+        },
+        "2": {
+          "ModelFile": "C:\\Users\\Roman\\source\\repos\\FruitScanner\\FruitScanner\\ML\\MLModel.onnx",
+          "FallbackToCpu": true
+        }
+      },
+      "estimators": [
+        "ResizeImages",
+        "ExtractPixels",
+        "ApplyOnnxModel"
+      ]
+    },
+    "MetricName": "accuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 2
+}
