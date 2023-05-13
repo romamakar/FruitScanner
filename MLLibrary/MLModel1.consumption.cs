@@ -5,13 +5,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-
 namespace MLLibrary
 {
-    public partial class MLModel
+    public partial class MLModel1
     {
         /// <summary>
-        /// model input class for MLModel.
+        /// model input class for MLModel1.
         /// </summary>
         #region model input class
         public class ModelInput
@@ -28,12 +27,12 @@ namespace MLLibrary
         #endregion
 
         /// <summary>
-        /// model output class for MLModel.
+        /// model output class for MLModel1.
         /// </summary>
         #region model output class
         public class ModelOutput
         {
-            public string[] ObjectTags = new string[] { "--bg--", "apple", "tomato", "yodurt", };
+            public string[] ObjectTags = new string[] { "--bg--", "apple", "banana", "carrot", "chese", "cucumber", "egg", "milk", "pepper", "tomato", };
 
             [ColumnName("boxes")]
             public float[] Boxes { get; set; } = new float[0];
@@ -98,7 +97,7 @@ namespace MLLibrary
 
         #endregion
 
-        private static string MLNetModelPath = "C:\\1\\MLModel.zip";
+        private static string MLNetModelPath = "C:\\1\\MLModel1.zip";
 
         public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 

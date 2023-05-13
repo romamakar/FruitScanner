@@ -4,7 +4,7 @@
   "DataSource": {
     "Type": "Vott",
     "Version": 1,
-    "FilePath": "C:\\assets\\vott-json-export\\assets-export.json"
+    "FilePath": "C:\\assets2\\vott-json-export\\assets2-export.json"
   },
   "Environment": {
     "Type": "Azure",
@@ -12,7 +12,7 @@
     "SubscriptionID": "15854ea2-0fd8-40a8-87e3-1ee0478491e1",
     "ResourceGroupName": "Group",
     "WorkspaceName": "MLW",
-    "ComputeName": "tsiol",
+    "ComputeName": "tsiol2",
     "Location": "westeurope",
     "ExperimentName": "Objectdetection"
   },
@@ -24,8 +24,8 @@
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "fasterrcnn-resnet50-fpn",
-        "Score": 0.92,
-        "RuntimeInSeconds": 1085.8384686
+        "Score": 0.93,
+        "RuntimeInSeconds": 1524.1852265
       }
     ],
     "Pipeline": {
@@ -46,7 +46,7 @@
           "OutputAsFloatArray": true
         },
         "2": {
-          "ModelFile": "C:\\Users\\Roman\\source\\repos\\FruitScanner\\FruitScanner\\ML\\MLModel.onnx",
+          "ModelFile": "C:\\Users\\Roman\\source\\repos\\FruitScanner\\MLLibrary\\MLModel1.onnx",
           "FallbackToCpu": true
         }
       },

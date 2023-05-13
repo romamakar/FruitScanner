@@ -9,7 +9,7 @@ using Microsoft.ML;
 
 namespace MLLibrary
 {
-    public partial class MLModel
+    public partial class MLModel1
     {
         /// <summary>
         /// Retrains model using the pipeline generated as part of the training process. For more information on how to load data, see aka.ms/loaddata.
@@ -35,7 +35,7 @@ namespace MLLibrary
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.ResizeImages(outputColumnName:@"input1",inputColumnName:@"input1",imageHeight:600,imageWidth:800,cropAnchor:ImageResizingEstimator.Anchor.Center,resizing:ImageResizingEstimator.ResizingKind.Fill)      
                                     .Append(mlContext.Transforms.ExtractPixels(outputColumnName:@"input1",inputColumnName:@"input1",colorsToExtract:ImagePixelExtractingEstimator.ColorBits.Rgb,orderOfExtraction:ImagePixelExtractingEstimator.ColorsOrder.ARGB,outputAsFloatArray:true))      
-                                    .Append(mlContext.Transforms.ApplyOnnxModel(modelFile:@"C:\Users\Roman\source\repos\FruitScanner\FruitScanner\ML\MLModel.onnx",fallbackToCpu:true));
+                                    .Append(mlContext.Transforms.ApplyOnnxModel(modelFile:@"C:\Users\Roman\source\repos\FruitScanner\MLLibrary\MLModel1.onnx",fallbackToCpu:true));
 
             return pipeline;
         }

@@ -14,6 +14,7 @@
             <Image x:Name="myImage"></Image>
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Button x:Name="scanBtn" Clicked="scanBtn_Clicked" Text="Сканувати"></Button>
+                <Button x:Name="fileBtn" Clicked="fileBtn_Clicked" Text="Вибрати фото"></Button>
                 <Button x:Name="backBtn" Clicked="backBtn_Clicked" Text="Назад" IsVisible="false"></Button>
                 <Button x:Name="listBtn" Clicked="listBtn_Clicked" Text="Список знайдених продуктів" IsVisible="false"></Button>
             </HorizontalStackLayout>
